@@ -15,7 +15,7 @@ CREATE TABLE #X (ID INT) ;
 INSERT INTO #X SELECT TOP 10 MyTableAId FROM dbo.MyTableA ;
 INSERT INTO #X SELECT TOP 10 MyTableBId FROM dbo.MyTableB ORDER BY MyTableBId DESC ;
 SELECT * FROM #X ; -- First Resultset
-SELECT * FROM #X X JOIN dbo.MyTableAId A ON X.ID = A.MyTableA ; -- Second Resultset
+SELECT * FROM #X X JOIN dbo.MyTableAId A ON X.ID = A.MyTableAId ; -- Second Resultset
 """
 
 list_of_DataFrames = QueryToDataFrameList('MyDBServer', 'MyDBName', query)
