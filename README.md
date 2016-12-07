@@ -7,7 +7,9 @@ Use:
 
 Things to note:
 
-- **Each statement in the query must end with a ';' (semicolon)** - That is how this function determines end of each statement in the query without doing Syntax Analysis on the query.  ADODO.Connection.execute() does not seem to support multi statement execution probably because it's OLEDB.  So the function calls one execute() per statement.
+- **Each statement in the query must end with a ';' (semicolon)** - That is how this function determines end of each statement in the query without doing Syntax Analysis on the query.
+
+  ADODO.Connection.execute() does not seem to support getting multiple result sets from multi statement execution probably because of OLEDB thingy (.execute() can run multiple statements but only the result set from the first statement seems to be coming back).  So the function calls one execute() per statement.
 
 - **Need Pandas and win32com.client** (as you can see in the code)
 
