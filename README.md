@@ -1,5 +1,5 @@
 # SQLQueryToPandasDataFrame
-Just a little Python function to execute multi-statement SQL server sql query and get array of Pandas DataFrame back based on result sets that are coming back from the query.  What I mean by multi-statement is that on the SQL side you might want to create some temp table, or branch out etc.
+Just a little Python function to execute multi-statement SQL server query and get array of Pandas DataFrame back based on result sets that are coming back from the query.  What I mean by multi-statement is that on the SQL side you might want to create some temp table, or branch out etc.
 
 Use:
 
