@@ -21,7 +21,7 @@ SELECT * FROM #X X JOIN dbo.MyTableAId A ON X.ID = A.MyTableAId ; -- Second Resu
 list_of_DataFrames = QueryToDataFrameList('MyDBServer', 'MyDBName', query)
 ```
 
-**Things to note**:
+**Notes**:
 
 - **Each statement in the query must end with a ';' (semicolon)** - That is how this function determines end of each statement in the query without doing Syntax Analysis on the query.
 
