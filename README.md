@@ -3,7 +3,7 @@ Just a little Python function to execute multi-statement SQL server sql query an
 
 Use:
 
-Just copy and paste the function to where you want to run.
+- Just copy and paste the function to where you want to run.
 
 Things to note:
 
