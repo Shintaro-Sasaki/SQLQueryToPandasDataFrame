@@ -32,3 +32,9 @@ list_of_DataFrames = QueryToDataFrameList('MyDBServer', 'MyDBName', query)
 - **This is for Windows machine** - You will need OLEDB SQL server driver available (which comes with newer Windows 7+)
 
 - **Not performance tested** - This is for small data (like less than 100K records, as to Big Data) and not intended to be used to replace ETL
+
+**TODO**
+
+- Assign corret Pandas DataFrame dtype based on OLEDB column data type
+
+- Figure out the reason for mysterious Python crash
