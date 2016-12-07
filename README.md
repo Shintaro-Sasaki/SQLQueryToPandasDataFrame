@@ -1,8 +1,11 @@
 # SQLQueryToPandasDataFrame
 
+
+
+
 Just a little Python function to execute multi-statement SQL server sql query and get array of Pandas DataFrame back based on result sets that are coming back from the query.  What I mean by multi-statement is that on the SQL side you might want to create some temp table, or branch out etc.
 
-The query MUST divide each statement with a ';' that is how this function determines different statement without doing Syntax Analysis of the query
+The query MUST divide each statement with a ';' that is how this function determines one statement from another without a Syntax Analysis of the query.  (You should have ';' *after* your each statement anyway :smirk_cat:)
 
 Not performance tested - This is for small data (like less than 100K records, as to Big Data) and not intended to be used to replace ETL
 
