@@ -9,7 +9,7 @@ Things to note:
 
 - **Each statement in the query must end with a ';' (semicolon)** - That is how this function determines end of each statement in the query without doing Syntax Analysis on the query.
 
-  ADODO.Connection.execute() does not seem to support getting multiple result sets from multi statement execution probably because of OLEDB thingy (.execute() can run multiple statements but only the result set from the first statement seems to be coming back).  So the function calls one execute() per statement.
+  ADODO.Connection.execute() does not seem to support getting multiple result sets from multi statement execution probably because of OLEDB thingy (.execute() can run multiple statements but only the result set from the first statement seems to be coming back).  So the function calls one execute() per block of sql statement that are devided by ';'.  So... if you have dynamic sql with ';' in it, that will break the statement and blow this up for sure.
 
 - **Need Pandas and win32com.client** (as you can see in the code)
 
