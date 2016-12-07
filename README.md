@@ -1,11 +1,31 @@
 # SQLQueryToPandasDataFrame
-Just a little Python function to execute multi-statement SQL server query and get array of Pandas DataFrame back based on result sets that are coming back from the query.  What I mean by multi-statement is that on the SQL side you might want to create some temp table, or branch out etc.
+Just a little Python function to execute multi-statement SQL server query and get list of Pandas DataFrame that contain all result sets that are coming back from the query.  What I mean by multi-statement is that on the SQL side you might want to create some temp table, or branch out etc.
 
-Use:
+**Usage**:
 
 - Just copy and paste the function to where you want to run.
 
-Things to note:
+**Example**:
+
+```Python
+query = """
+
+CREATE TABLE #X (ID INT) ;
+
+INSERT INTO #X SELECT TOP 10 MyTableAId FROM dbo.MyTableA ;
+
+INSERT INTO #X SELECT TOP 10 MyTableBId FROM dbo.MyTableB ORDER BY MyTableBId DESC ;
+
+SELECT * FROM #X ;
+
+SELECT * FROM #X X JOIN dbo.MyTableAId A ON X.ID = A.MyTableA ;
+
+"""
+
+list_of_DataFrames = QueryToDataFrameList('MyDBServer', 'MyDBName', query)
+```
+
+**Things to note**:
 
 - **Each statement in the query must end with a ';' (semicolon)** - That is how this function determines end of each statement in the query without doing Syntax Analysis on the query.
 
