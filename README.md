@@ -9,17 +9,11 @@ Just a little Python function to execute multi-statement SQL server query and ge
 
 ```Python
 query = """
-
 CREATE TABLE #X (ID INT) ;
-
 INSERT INTO #X SELECT TOP 10 MyTableAId FROM dbo.MyTableA ;
-
 INSERT INTO #X SELECT TOP 10 MyTableBId FROM dbo.MyTableB ORDER BY MyTableBId DESC ;
-
 SELECT * FROM #X ;
-
 SELECT * FROM #X X JOIN dbo.MyTableAId A ON X.ID = A.MyTableA ;
-
 """
 
 list_of_DataFrames = QueryToDataFrameList('MyDBServer', 'MyDBName', query)
